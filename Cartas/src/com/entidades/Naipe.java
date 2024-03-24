@@ -31,15 +31,11 @@ public class Naipe {
         palos.add("DI");
         palos.add("TR");
         
-        Numero numero;
-        for(int  i=0; i<numerosPosibles.size(); i++) {
-        	numero = numerosPosibles.get(i);
-        	String palo;
-        	for(int a=0; a<palos.size();a++) {
-        		palo = palos.get(i);
-        		cartas.add(new Carta(numero, palo));
-        	}
-        }
+        for (Numero numero : numerosPosibles) {
+			for (String palo : palos) {
+				cartas.add(new Carta(numero, palo));
+			}
+		}
 	}
 	
 	public ArrayList<Carta> barajar() {
